@@ -6,7 +6,7 @@
 /*   By: kmeixner <konstantin.meixner@freenet.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 21:53:08 by kmeixner          #+#    #+#             */
-/*   Updated: 2022/07/04 19:12:16 by kmeixner         ###   ########.fr       */
+/*   Updated: 2022/07/04 19:24:16 by kmeixner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,7 +95,7 @@ void Bureaucrat::executeForm(AForm const &f) const
 	}
 	catch(const std::exception& e)
 	{
-		std::cout << this->_name << " couldn't execute " << f.getName() << " because: ";
+		std::cout << this->_name << " couldn't execute the fucking " << f.getName() << " because: ";
 		std::cout << e.what() << std::endl;
 	}
 }

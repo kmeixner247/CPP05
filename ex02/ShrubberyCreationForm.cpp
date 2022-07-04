@@ -6,7 +6,7 @@
 /*   By: kmeixner <konstantin.meixner@freenet.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 12:53:41 by kmeixner          #+#    #+#             */
-/*   Updated: 2022/07/04 18:46:42 by kmeixner         ###   ########.fr       */
+/*   Updated: 2022/07/04 19:23:57 by kmeixner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,16 +44,7 @@ ShrubberyCreationForm::~ShrubberyCreationForm()
 
 void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 {
-	try
-	{
-		this->checkForExec(executor);
-	}
-	catch(std::exception &e)
-	{
-		std::cout << executor.getName() << " couldn't execute " << this->getName() << " because: ";
-		std::cout << e.what() << std::endl;
-		return ;
-	}
+	this->checkForExec(executor);
 	std::ofstream ofs((this->_target + "_shrubbery").c_str());
 	ofs << "                      ___" << std::endl;
 	ofs << "                _,-'\"\"   \"\"\"\"`--." << std::endl;
