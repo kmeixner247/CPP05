@@ -6,7 +6,7 @@
 /*   By: kmeixner <konstantin.meixner@freenet.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 22:35:26 by kmeixner          #+#    #+#             */
-/*   Updated: 2022/07/04 18:58:11 by kmeixner         ###   ########.fr       */
+/*   Updated: 2022/07/04 20:55:43 by kmeixner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,12 +86,11 @@ void AForm::beSigned(Bureaucrat const &b)
 
 bool AForm::checkForExec(Bureaucrat const &executor) const
 {
+	if (!this->getSigned())
+		throw AForm::FormUnsignedException();
 	if (this->getExecGrade() < executor.getGrade())
 		throw Bureaucrat::GradeTooLowException();
-	else if (!this->getSigned())
-		throw AForm::FormUnsignedException();
-	else
-		return (0);
+	return (0);
 }
 
 const char *AForm::GradeTooHighException::what() const throw()
@@ -111,7 +110,7 @@ const char *AForm::FormUnsignedException::what() const throw()
 
 std::ostream &operator<<(std::ostream &o, AForm const &i)
 {
-	std::cout << "Form " << i.getName() << "(";
+	std::cout << i.getName() << "(";
 	std::cout << (i.getSigned() ? "SIGNED" : "UNSIGNED") << ", ";
 	std::cout << "ToSign: " << i.getSignGrade() << ", ";
 	std::cout << "ToExec: " << i.getExecGrade() << ")";
