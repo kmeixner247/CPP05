@@ -6,7 +6,7 @@
 /*   By: kmeixner <konstantin.meixner@freenet.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 22:35:26 by kmeixner          #+#    #+#             */
-/*   Updated: 2022/07/01 23:15:04 by kmeixner         ###   ########.fr       */
+/*   Updated: 2022/07/04 20:55:54 by kmeixner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,7 @@ const char *Form::GradeTooLowException::what() const throw()
 
 std::ostream &operator<<(std::ostream &o, Form const &i)
 {
-	std::cout << "Form " << i.getName() << "(";
+	std::cout << i.getName() << "(";
 	std::cout << (i.getSigned() ? "SIGNED" : "UNSIGNED") << ", ";
 	std::cout << "ToSign: " << i.getSignGrade() << ", ";
 	std::cout << "ToExec: " << i.getExecGrade() << ")";
