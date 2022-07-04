@@ -6,11 +6,11 @@
 #    By: kmeixner <konstantin.meixner@freenet.de    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/09 10:09:08 by kmeixner          #+#    #+#              #
-#    Updated: 2022/07/04 19:48:19 by kmeixner         ###   ########.fr        #
+#    Updated: 2022/07/04 20:45:59 by kmeixner         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=	moreforms
+NAME		=	intern
 
 SRCS		=	main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp Intern.cpp
 
